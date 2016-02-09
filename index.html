@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1">
+	<title> Vivian's Personal Page
+		</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="animate.css"/>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" >Vivian's Website</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#/home">Home</a></li>
+            <li><a href="#/background">Education Background</a></li>
+            <li><a href="#/skills">Skills and Projects</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More about me <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/food">I Love Chinese Food</a></li>
+                <li><a href="#/travel">Go Travel</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    
+<div class="container" ng-view></div>
+
+<hr>
+<div class="container" ng-controller="formCtrl">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="feedback">
+                <h2 ng-show='showUp'>Thank you for your comment!</h2>
+                <form class="form" ng-submit="addMessage()" ng-hide="showUp">
+                    <h3>How do you like my website?</h3>
+                    <select id="star" ng-model="star">`
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 </option>
+                    </select>
+                    <span class="glyphicon glyphicon-heart" style="color:red"></span>
+                    <h4>Welcome your valuable comments!</h4>
+                    <textarea class="form-control" rows="10" cols="70" ng-model="newMessageText"></textarea>
+                    <br/>
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </form>	
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="message in messages | limitTo: 10">
+                    <span class="glyphicon glyphicon-heart" style="color:red"></span> Likes: {{message.star}}  <span class="pull-right">Comment: {{message.text}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+ <!-- back to top button -->
+            <a href="" class="btn btn-default" style="bottom:30px; right:40px; position:fixed; font-size:25px; display:none;" id="backTop" ><span class="glyphicon glyphicon-circle-arrow-up" ></span></a>
+<footer>
+   <div style="background-color:grey" class="text-center footer">
+   <h3>Contact Me <span class="glyphicon glyphicon-leaf"></span></h3>
+    <ul class="list-unstyled">
+	<li style="font-size:18px; display:inline; padding-right:60px"><span class="glyphicon glyphicon-envelope"></span> E-mail: weiw2013@gmail.com </li>
+	<li style="font-size:18px; display:inline"><a href="https://github.com/vivian90" target="_blank"><span class="fa fa-github-square" style="text-decoration:underline; color:black"> Github</span> </a></li>
+   </ul>
+   </div>
+</footer>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	<script src="app.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+	<script src="routes.js"></script>
+	<script src="foodController.js"></script>
+	<script src="travelController.js"></script>
+    <script src="formController.js"></script>
+</body>
+
+</html>

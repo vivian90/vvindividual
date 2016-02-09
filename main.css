@@ -1,0 +1,102 @@
+.footer{
+	padding-top:10px;
+	padding-bottom: 20px;
+	color:black;
+}
+.active{
+	
+	font-weight: bold;
+}
+
+.closebtn{
+   position:absolute;
+   right:10px;
+   top:10px;
+
+}
+
+.edu img{
+width:100%;
+border:solid;
+}
+
+.edu{
+	margin-bottom: 50px;
+}
+
+.edu h3{
+	margin-top: 0px;
+}
+
+#star{
+	width:90px;
+	height:25px;
+}
+.feedback{
+	margin-bottom: 30px;	
+	padding-bottom: 25px;
+	padding-left: 25px;
+}
+
+.skill,.skills{
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+.skills img{
+	width:180px;
+	height:60px;
+	/*position: relative;
+	left:150px;*/
+	margin-bottom: 15px;
+
+}
+td.test{
+	-webkit-column-count:2;
+}
+th{
+	text-transform: uppercase;
+}
+.photo{
+	border:border: 1px solid grey;
+}
+
+.images:hover,.photo:hover{
+	border: 2px solid #5CADFF;
+}
+
+#modal{
+	width:50%;
+	position:fixed;
+	left:25%;
+	top:5%;
+	display: none;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+
+#shadow{
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	background-color: lightgray;
+	opacity: 0.6;
+	display: none;
+}
+
+.jumbotron{
+        background-color: #FFF7FB;
+}
+
+p{
+    text-align: left;
+}
+
+@media (max-width:768px){
+    div.edu img{
+        display: none;
+    }
+}

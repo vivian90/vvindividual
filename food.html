@@ -1,0 +1,27 @@
+<h2  class="jumbotron">I am an international student in America and I really miss my country's dishes, yeah, the Chinese foods. So I am gradually becoming a cook. Following are some favorite dishes and you can check the recipe, if you also like them.</h2>
+<div ng-controller="foodController" style="margin-top:30px" >
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>image</th>
+				<th>material</th>
+				<th>recipe</th>
+			</tr>
+		</thead>
+
+       <tbody>
+       	<tr ng-repeat="food in foods" ng-class="{'danger':$index%2==0}"> 
+       		<td>{{food.name}}</td>
+       		<td class="text-center"><img ng-src="{{food.image}}" style="width:200px; height:150px" class="img-rounded"/></td>
+       		<td ng-class="{'test':food.material.length>7}">
+       			<ul>
+       				<li ng-repeat="mt in food.material" >{{mt}}</li>
+       				</ul></td>
+       		<td><a ng-href="{{food.recipe}}" target="_blank">HOW to cook?</a></td>
+ 
+       	</tr>
+       </tbody>
+	</table>
+	
+</div>
